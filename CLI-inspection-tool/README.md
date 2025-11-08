@@ -64,7 +64,8 @@ python3 deploy_tool.py show ns-b
    - Date updated
 
 ```bash
- Output
+Output
+
 NAMESPACE: ns-a
 --------------------------------------------
 adservice       us-central1-docker.pkg.dev/google-samples/microservices-demo/adservice:v0.10.3 2025-11-07T15:38:47Z
@@ -86,6 +87,7 @@ python3 deploy_tool.py diff ns-a ns-b
 
 ```bash 
 Output
+
 Comparing ns-a vs ns-b
 
 Deployments only in ns-a: emailservice, checkoutservice
@@ -111,7 +113,8 @@ python3 deploy_tool.py scan ns-a
    - RBAC checks
 
 ```bash
-Output 
+Output
+ 
 Running Trivy scan for namespace: ns-a
 
 2025-11-08T22:57:20Z    INFO    Node scanning is enabled
