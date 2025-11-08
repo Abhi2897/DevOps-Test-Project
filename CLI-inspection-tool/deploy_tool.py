@@ -15,19 +15,18 @@ import json
 import subprocess
 from kubernetes import client, config
 
-
-
 # Connect to Kubernetes cluster
 try:
     config.load_kube_config()
     apps = client.AppsV1Api()
 except Exception as err:
-    print(f"❌ Failed to load kube config: {err}")
+    print(f"Failed to load kube config: {err}")
     sys.exit(1)
 
 
 # Utility: get deployments info
 def get_deployments(namespace: str) -> dict:
+
     """
     Fetch all deployments in a namespace and return
     a dict of {name: {image, updated}}.
@@ -103,9 +102,9 @@ def scan(namespace: str):
     try:
         subprocess.run(cmd, check=True)
     except FileNotFoundError:
-        print("❌ Trivy not found. Install with: sudo apt install trivy -y")
+        print("Trivy not found. Install with: sudo apt install trivy -y")
     except subprocess.CalledProcessError as e:
-        print("⚠️  Trivy scan failed:", e)
+        print("Trivy scan failed:", e)
 
 
 # main 
@@ -125,13 +124,13 @@ def main():
         show(sys.argv[2])
     elif cmd == "diff":
         if len(sys.argv) < 4:
-            print("❌ Need two namespaces for diff")
+            print("Need two namespaces for diff")
             sys.exit(1)
         diff(sys.argv[2], sys.argv[3])
     elif cmd == "scan":
         scan(sys.argv[2])
     else:
-        print("❌ Unknown command. Use show / diff / scan.")
+        print("Unknown command. Use show / diff / scan.")
 
 
 if __name__ == "__main__":
