@@ -33,7 +33,6 @@ python3 deploy_tool.py scan ns-a
 2. Quick start 
 
 - Tested on Ubuntu-based environments with MicroK8s.
-
 - Install dependencies:
 
 ```bash
@@ -66,7 +65,6 @@ python3 deploy_tool.py show ns-b
 
 ```bash
  Output
-<!--
 NAMESPACE: ns-a
 --------------------------------------------
 adservice       us-central1-docker.pkg.dev/google-samples/microservices-demo/adservice:v0.10.3 2025-11-07T15:38:47Z
@@ -86,7 +84,8 @@ python3 deploy_tool.py diff ns-a ns-b
    - Deployments only in ns-b
    - Deployments with different images
 
-```bash Output
+```bash 
+Output
 Comparing ns-a vs ns-b
 
 Deployments only in ns-a: emailservice, checkoutservice
@@ -111,7 +110,8 @@ python3 deploy_tool.py scan ns-a
    - Network checks: verifies if NetworkPolicies exist and Ingress 
    - RBAC checks
 
-```bash Output 
+```bash
+Output 
 Running Trivy scan for namespace: ns-a
 
 2025-11-08T22:57:20Z    INFO    Node scanning is enabled
