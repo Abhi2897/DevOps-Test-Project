@@ -47,10 +47,10 @@ sudo apt install trivy -y
 ```
 
 3. Clone this repo
-
+```bash
 git clone <https://github.com/Abhi2897/DevOps-Test-Project.git>
 cd microservices-demo/CLI-inspection-tool
-
+```
 4. Show deployments
 ```bash
 python3 deploy_tool.py show ns-a 
@@ -59,10 +59,10 @@ python3 deploy_tool.py show ns-b
 ./deploy_tool.py show ns-a 
 ./deploy_tool.py show ns-b
 ```
-- Displays a table with:
- - Deployment name
- - Images used
- - Date updated
+> Displays a table with:
+  - Deployment name
+  - Images used
+  - Date updated
 
 ```bash
  Output
@@ -80,11 +80,11 @@ python3 deploy_tool.py diff ns-a ns-b
 - or can be execute 
 ./deploy_tool.py diff ns-a ns-b
 ```
--------------------------------------
-- Compare and show Deployments between two namespaces
- - Deployments only in ns-a
- - Deployments only in ns-b
- - Deployments with different images
+
+> Compare and show Deployments between two namespaces
+  - Deployments only in ns-a
+  - Deployments only in ns-b
+  - Deployments with different images
 
 ```bash Output
 Comparing ns-a vs ns-b
@@ -104,12 +104,12 @@ python3 deploy_tool.py scan ns-a
 - or can be execute 
 ./deploy_tool.py scan ns-a
 ```
---------------------------------------------
-- Performs basic security checks:
- - Image CVE scan via Trivy (HIGH/CRITICAL severity)
- - Pod security: privileged containers, root user, privilege escalation
- - Network checks: verifies if NetworkPolicies exist and Ingress 
- - RBAC checks
+
+> Performs basic security checks:
+  - Image CVE scan via Trivy (HIGH/CRITICAL severity)
+  - Pod security: privileged containers, root user, privilege escalation
+  - Network checks: verifies if NetworkPolicies exist and Ingress 
+  - RBAC checks
 
 ```bash Output 
 Running Trivy scan for namespace: ns-a
